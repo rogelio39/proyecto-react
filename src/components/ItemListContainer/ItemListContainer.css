@@ -1,0 +1,16 @@
+.titulo{
+    text-align: center;
+    font-size: 1.5rem;
+    border: black 1px solid;
+    border-radius: 50px;
+    display: flex;
+    margin: auto;
+    width: 40vw;
+    padding: 0.7rem;
+    background-color: aliceblue;
+}
+
+.titulo:hover{
+    background-color: rgb(44, 85, 77);
+    cursor: pointer;
+}
