@@ -1,0 +1,41 @@
+*{
+    margin:0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+ul,li{
+    list-style: none;
+}
+
+a{
+    text-decoration: none;
+}
+
+
+
+header{
+    font-size: 0.9rem;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    border-bottom: 1px solid black;
+    padding: 1rem;
+    margin-bottom: 1rem;
+    gap: 5px;
+}
+
+.navBar ul{
+    display: flex;
+    justify-content: space-between;
+    align-items: center; 
+    cursor: pointer;
+    gap: 1rem;
+}
+
+.bi{
+    display: flex;
+    justify-content: space-between;
+    gap: 5px;
+    align-items: center;
+}
