@@ -13,6 +13,20 @@ a{
 }
 
 
+li {
+    margin: 0 2rem;
+    cursor: pointer;
+}
+
+
+
+.imgLogo {
+    width: 5rem;
+}
+
+
+
+
 
 header{
     font-size: 0.9rem;
@@ -23,9 +37,11 @@ header{
     padding: 1rem;
     margin-bottom: 1rem;
     gap: 5px;
+    background: linear-gradient(to left, #0d495da5, #2fbbf37d, #4bd7f07d);
+    box-shadow: 7px 10px 10px black;
 }
 
-.navBar ul{
+.navBar-nav{
     display: flex;
     justify-content: space-between;
     align-items: center; 
