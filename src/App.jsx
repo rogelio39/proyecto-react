@@ -6,7 +6,7 @@ import NavBar from './components/NavBar/NavBar';
 import ItemCount from './components/ItemCount/ItemCount';
 import Vista from './components/Vista/Vista';
 import Mensaje from './components/Mensaje/Mensaje';
-
+import Categorias from './components/Categorias/Categorias';
 
 
 function App() {
@@ -15,8 +15,8 @@ function App() {
       <NavBar/>
       <ProductCard />
       <ItemListContainer greeting='Paradisi'/>
+      <Categorias/>
       <ItemCount inicial={1} stock={10}/>
-      <ItemCount inicial={5} stock={8}/>
       <Vista/>
       <Mensaje/>
 
