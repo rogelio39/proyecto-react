@@ -25,7 +25,7 @@ const NavBar = () => {
                             <p className="nav-link">Pricing</p>
                         </li>
                         <li className="nav-item">
-                            <a className="nav-link disabled">Disabled</a>
+                            <p className="nav-link disabled">Disabled</p>
                         </li>
                     </ul>
                 </nav>
