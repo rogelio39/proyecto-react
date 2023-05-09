@@ -1,0 +1,4 @@
+.contenedorProducts{
+    display: flex;
+    flex-wrap: wrap;
+}
