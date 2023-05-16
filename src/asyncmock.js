@@ -5,7 +5,7 @@ const productos = [
 
 ]
 
-
+//funcion que nos devuelve el array con los productos con un delay de 2 segundos
 export const getProducts = () => {
     return new Promise((resolve) => {
         setTimeout(() => {
@@ -13,3 +13,19 @@ export const getProducts = () => {
         }, 2000);
     });
 }
+
+
+//funcion similar a la anterior pero lo que haremos es que solo devuelve un producto.
+
+export const getOneProduct = (id) => {
+    return new Promise((resolve) => {
+        setTimeout(() => {
+            const producto = productos.find(prod => prod.id === id)
+
+            resolve(producto);
+        })
+        }, 2000)
+    }
+
+
+    
