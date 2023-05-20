@@ -5,6 +5,7 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import NavBar from './components/NavBar/NavBar';
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
+import Footer from './components/Footer/Footer';
 
 
 
@@ -24,7 +25,7 @@ function App() {
           <Route path='item/:idItem' element={<ItemDetailContainer />}></Route>
         </Routes>
       </BrowserRouter>
-    
+      <Footer />
 
 
     </div >

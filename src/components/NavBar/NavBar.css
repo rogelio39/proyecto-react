@@ -20,7 +20,7 @@ li {
 
 
 
-.imgLogo {
+.imgLogo  {
     width: 5rem;
 }
 
@@ -41,7 +41,7 @@ li {
     box-shadow: 7px 10px 10px black;
 }
 
-.navBar-nav{
+.navbar-nav{
     display: flex;
     justify-content: space-between;
     align-items: center; 
