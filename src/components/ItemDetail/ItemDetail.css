@@ -1,9 +1,16 @@
 .contenedorItem {
+    color: white;
+    padding: 1rem;
+    border-radius: 10px;
     text-align: center;
     border: 1px solid #e3e1e1;
     margin: 3rem;
+    background:linear-gradient(to left, #122141, #1c3c82ea, #75b8e1);
 }
 
 img {
-    width: 50vw;
+    width: 40vw;
+    border-radius: 10px;
+    padding-bottom: 2rem;
+    object-fit:fill;
 }

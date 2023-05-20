@@ -1,7 +1,7 @@
-const productos = [
-    { nombre: 'Pan integral', precio: 500, id: 1, img: './assets/panIntegral.jpg' },
-    { nombre: 'Pan integral', precio: 1000, id: 2, img: './assets/budines.jpg' },
-    { nombre: 'Pan integral', precio: 200, id: 3, img: './assets/alfajores.jpg' }
+export const productos = [
+    { nombre: 'Pan integral', precio: 500, id: '1', img: '../assets/panIntegral.jpg', idCat:'1' },
+    { nombre: 'Budines', precio: 1000, id: '2', img: '../assets/budines.jpg', idCat:'2' },
+    { nombre: 'Alfajores', precio: 200, id: '3', img: '../assets/alfajores.jpg', idCat:'3' }
 
 ]
 
@@ -28,4 +28,25 @@ export const getOneProduct = (id) => {
     }
 
 
+//funcion que retorne toda una categoria de productos
+
+export const getProductsByCategory = (idCategoria) => {
+    return new Promise( resolve => {
+        setTimeout( () => {
+            const productosCategoria = productos.filter(prod => prod.idCat === idCategoria);
+            resolve (productosCategoria);    
+        },1000)
+        })
+    }
+
+
+
+    export const getOneProductBySearch = (busqueda) => {
+        return new Promise((resolve) => {
+            setTimeout(() => {
+                const producto = productos.find(prod => prod.name === busqueda)
     
+                resolve(producto);
+            })
+            }, 2000)
+        }

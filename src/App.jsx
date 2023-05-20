@@ -1,12 +1,12 @@
 
 import './App.css';
 import ItemListContainer from './components/ItemListContainer/ItemListContainer';
-import NavBar from './components/NavBar/NavBar';
-import JsonPlaceHolder from './components/JasonPlaceHolder/JsonPlaceHolder';
-import Netflix from './components/Netflix/Netflix';
 import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailContainer';
-import Hooks from './components/Hooks/Hooks';
-import Login from './components/Patrones/Login';
+import NavBar from './components/NavBar/NavBar';
+
+import { BrowserRouter, Route, Routes } from 'react-router-dom';
+
+
 
 
 
@@ -15,14 +15,17 @@ function App() {
 
   return (
     <div className="App">
-      <NavBar />
-      <ItemListContainer greeting='Paradisi' />
-      <ItemDetailContainer />
-      <JsonPlaceHolder />
-      <Netflix />
-      <Hooks />
 
-      <Login/>
+      <BrowserRouter>
+        <NavBar />
+        <Routes>
+          <Route path='/' element={<ItemListContainer />} />
+          <Route path='categoria/:idCategoria' element={<ItemListContainer />} />
+          <Route path='item/:idItem' element={<ItemDetailContainer />}></Route>
+        </Routes>
+      </BrowserRouter>
+    
+
 
     </div >
   );
