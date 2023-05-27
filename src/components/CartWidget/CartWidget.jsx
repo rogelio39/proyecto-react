@@ -1,8 +1,23 @@
+
 import './CartWidget.css'
 
-const CartWidget = () => {
+
+import { useState, useEffect } from 'react'
+
+
+
+const CartWidget = ({ cantidad }) => {
+
+    const [productosAgregados, setProductosAgregados] = useState(0);
+
+
+    useEffect((cantidad) => {
+        setProductosAgregados(cantidad);
+    }, [cantidad])
+
+
     return (
-        <li className='bi bi-cart'> 3 </li>
+        <li className='bi bi-cart'>{productosAgregados}</li>
     )
 }
 

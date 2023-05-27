@@ -1,7 +1,7 @@
 export const productos = [
-    { nombre: 'Pan integral', precio: 500, id: '1', img: '../assets/panIntegral.jpg', idCat:'1' },
-    { nombre: 'Budines', precio: 1000, id: '2', img: '../assets/budines.jpg', idCat:'2' },
-    { nombre: 'Alfajores', precio: 200, id: '3', img: '../assets/alfajores.jpg', idCat:'3' }
+    { nombre: 'Pan integral', precio: 500, id: '1', stock: 10, img: '../assets/panIntegral.jpg', idCat:'1' },
+    { nombre: 'Budines', precio: 1000, id: '2', stock: 10, img: '../assets/budines.jpg', idCat:'2' },
+    { nombre: 'Alfajores', precio: 200, id: '3',stock:7, img: '../assets/alfajores.jpg', idCat:'3' }
 
 ]
 
@@ -13,6 +13,7 @@ export const getProducts = () => {
         }, 2000);
     });
 }
+
 
 
 //funcion similar a la anterior pero lo que haremos es que solo devuelve un producto.
