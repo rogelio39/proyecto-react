@@ -7,11 +7,13 @@ import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
 
-
+import Productos from './components/Productos/Productos';
 
 
 
 function App() {
+
+
 
 
   return (
@@ -26,6 +28,7 @@ function App() {
           <Route path='*' element={<h2>ERROR 404</h2>}/>
         </Routes>
       </BrowserRouter>
+      <Productos/>
       <Footer />
 
 

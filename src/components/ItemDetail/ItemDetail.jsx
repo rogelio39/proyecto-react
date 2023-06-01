@@ -7,18 +7,30 @@ import CartWidget from '../CartWidget/CartWidget'
 
 import ItemCount from '../ItemCount/ItemCount'
 
+import { CarritoContext } from '../../context/CarritoContext';
+
+import { useContext } from 'react'
+
 
 const ItemDetail = ({ id, nombre, precio, img, stock }) => {
 
     //funcion manejadora de la cantidad
     const [agregarCantidad, setAgregarCantidad] = useState(0);
 
+    const {addProduct} = useContext(CarritoContext);
+
 
     //funcion manejadora de la cantidad
 
     const handleCantidad = (cantidad) => {
         setAgregarCantidad(cantidad);
-        console.log('productos agregados: ' + cantidad);
+        
+        //creo un objeto con el item y la cantidad:
+
+        const item = {id, nombre, precio};
+
+        addProduct(item, cantidad);
+
     }
 
     return (
