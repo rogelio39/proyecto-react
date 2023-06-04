@@ -10,7 +10,7 @@ import { initializeApp } from "firebase/app";
 
 //la de firestore se utiliza para obtener una instancia del servicio de firestore.
 
-import {getFirestore} from 'firebase/firestore';
+import { getFirestore } from "firebase/firestore";
 
 
 // Your web app's Firebase configuration. Trabajamos con un objeto con toda la informacion de la cuenta. Aca se incluye la key personal de acceso a la base de datos.

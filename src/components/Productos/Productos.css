@@ -8,7 +8,7 @@
 }
 
 
-.producto-card{
+.product-card{
     width: 200px;
     border: 1px solid black;
     border-radius: 10px;
@@ -16,13 +16,13 @@
 }
 
 
-.producto-card h2 {
+.product-card h2 {
     font-size: 1.5rem;
     margin-bottom: 0.5rem;
 }
 
 
-.producto-card button {
+.product-card button {
     background-color: #007bff;
     color:#fff;
     border: none;
@@ -32,6 +32,6 @@
 }
 
 
-.producto-card button:hover{
+.product-card button:hover{
     background-color: #0062cc;
 }

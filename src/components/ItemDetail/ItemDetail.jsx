@@ -3,11 +3,11 @@ import './ItemDetail.css'
 import { useState } from 'react'
 import { Link } from 'react-router-dom'
 
-import CartWidget from '../CartWidget/CartWidget'
+// import CartWidget from '../CartWidget/CartWidget'
 
 import ItemCount from '../ItemCount/ItemCount'
 
-import { CarritoContext } from '../../context/CarritoContext';
+import {CarritoContext} from '../../context/CarritoContext'
 
 import { useContext } from 'react'
 
@@ -24,6 +24,8 @@ const ItemDetail = ({ id, nombre, precio, img, stock }) => {
 
     const handleCantidad = (cantidad) => {
         setAgregarCantidad(cantidad);
+
+        console.log('productos agregados' + cantidad);
         
         //creo un objeto con el item y la cantidad:
 
@@ -42,9 +44,8 @@ const ItemDetail = ({ id, nombre, precio, img, stock }) => {
             <img src={img} alt={nombre} />
             {
                 //empleamos logica de montaje y desmontaje de componentes
-                agregarCantidad > 0 ? (<Link to={CartWidget}><button>Terminar compra</button></Link>) : (<ItemCount inicial={1} stock={stock} funcionAgregar={handleCantidad} />)
+                agregarCantidad > 0 ? <Link to='/cart'><button>Terminar compra</button></Link> : <ItemCount inicial={1} stock={stock} funcionAgregar={handleCantidad} />
             }
-            <CartWidget cantidad={agregarCantidad}/>
         </div>
     )
 }

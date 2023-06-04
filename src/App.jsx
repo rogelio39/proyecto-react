@@ -9,7 +9,7 @@ import Footer from './components/Footer/Footer';
 
 import Productos from './components/Productos/Productos';
 
-
+import Form from './components/Form/Form';
 
 function App() {
 
@@ -29,6 +29,7 @@ function App() {
         </Routes>
       </BrowserRouter>
       <Productos/>
+      <Form/>
       <Footer />
 
 

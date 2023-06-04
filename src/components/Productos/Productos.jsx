@@ -9,7 +9,7 @@ import { useState, useEffect } from 'react';
 //collection me permite obtener una collecion 
 //query me sirve cuando quiero generar una consulta. 
 
-import { getDocs, collection, query } from 'firebase/firestore';
+import { getDocs, collection, query, doc, updateDoc } from 'firebase/firestore';
 
 
 import { baseDeDatos } from '../../services/config';
@@ -22,35 +22,52 @@ const Productos = () => {
 
 
     useEffect(() => {
-        const misProductos = query(collection(baseDeDatos, 'inventario'));
+        const myProducts = query(collection(baseDeDatos, 'inventario'));
 
-        getDocs(misProductos)
+        //por si quisieramos filtrar
+        // const myProducts = query(collection(baseDeDatos, "inventario"), where("precio", "<", 200));
+
+        getDocs(myProducts)
             .then((response) => {
-                setProductos(response.docs.map((doc) => ({ id: doc.id, ...doc.data })))
-            });
+                setProductos(response.docs.map((doc) => ({ id: doc.id, ...doc.data()})))
+            })
+            .catch(err => console.error(err));
+            
 
 
-    }, []) //al poner un array vacio en el array de dependencias, obtengo los datos cuando se monta el componente.
+    }, [productos]) //al poner un array vacio en el array de dependencias, obtengo los datos cuando se monta el componente.
 
+
+    //modificacion de stock al comprar producto
+
+    const descontarStock = async(prod) => {
+
+        const productRef = doc(baseDeDatos, "inventario", prod.id);
+
+
+        const nuevoStock = prod.stock - 1;
+
+        await updateDoc(productRef, {stock: nuevoStock});
+    }
 
 
     return (
-        <div>
+        <>
             <h2>Productos</h2>
             <div className='productos-container'>
                 {
                     productos.map((prod) => (
-                        <div className='product-card' key={productos.id}>
-                            <h2>{productos.nombre}</h2>
-                            <p>{productos.precio}</p>
-                            <p>Stock: {productos.stock}</p>
-                            <button>Comprar</button>
+                        <div className='product-card' key={prod.id}>
+                            <h2>{prod.nombre}</h2>
+                            <p>$ {prod.precio}</p>
+                            <p>Stock: {prod.stock}</p>
+                            <button onClick={() => descontarStock(prod)}>Comprar</button>
                         </div>
                     )
                     )
                 }
             </div>
-        </div>
+        </>
     )
 }
 

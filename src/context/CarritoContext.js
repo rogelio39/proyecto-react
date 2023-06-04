@@ -17,34 +17,37 @@ export const CarritoProvider = ({ children }) => {
     //creamos estado carrito con useState
     const [carrito, setCarrito] = useState([]);
 
+
     //agregamos metodos a carritoprovider que me permitiran manipular el carrito.
 
 
     //agregar productos
-    const addProduct = ({ item, cantidad }) => {
+    const addProduct = (item, cantidad) => {
         if (!isInCart(item.id)) {
-            setCarrito(prevCart => [...prevCart, { item, cantidad }])
+            setCarrito(prev => [...prev, { item, cantidad }])
         } else {
-            const updatedCart = carrito.map(prod => {
-                if (prod.id === item.id) {
-                    return { ...prod, cantidad: prod.cantidad + cantidad }
-                }
-                return prod;
-            }
-            )
-            setCarrito(updatedCart);
+
+            console.log('ya tienes este producto');
+            // const updatedCart = carrito.map(prod => {
+            //     if (prod.id === item.id) {
+            //         return {...prod, cantidad: prod.cantidad + cantidad }
+            //     }
+            //     return prod;
+            // }
+            // )
+            // setCarrito(updatedCart);
         }
 
         //la sintaxis: setCarrito(prod => [...prod, {item, cantidad}])
         // se utiliza para crear un nuevo array a partir del estado anterior del carrito y agregar un nuevo objeto que representa el nuevo producto (con el item que se agrega y la cantidad)
     }
 
+            //funcion auxiliar 'isInCart'
 
-    //funcion auxiliar 'isInCart'
-
-    const isInCart = (id) => {
-        return carrito.some(prod => prod.id === id);
-    }
+            const isInCart = (id) => {
+                return carrito.some(prod => prod.id === id);
+            }
+        
 
 
     //eliminar productos
