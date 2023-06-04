@@ -10,6 +10,7 @@ import Footer from './components/Footer/Footer';
 import Productos from './components/Productos/Productos';
 
 import Form from './components/Form/Form';
+import { CarritoProvider } from './context/CarritoContext';
 
 function App() {
 
@@ -18,18 +19,19 @@ function App() {
 
   return (
     <div className="App">
-
-      <BrowserRouter>
-        <NavBar />
-        <Routes>
-          <Route path='/' element={<ItemListContainer />} />
-          <Route path='categoria/:idCategoria' element={<ItemListContainer />} />
-          <Route path='item/:idItem' element={<ItemDetailContainer />}></Route>
-          <Route path='*' element={<h2>ERROR 404</h2>}/>
-        </Routes>
-      </BrowserRouter>
-      <Productos/>
-      <Form/>
+      <CarritoProvider>
+        <BrowserRouter>
+          <NavBar />
+          <Routes>
+            <Route path='/' element={<ItemListContainer />} />
+            <Route path='categoria/:idCategoria' element={<ItemListContainer />} />
+            <Route path='item/:idItem' element={<ItemDetailContainer />}></Route>
+            <Route path='*' element={<h2>ERROR 404</h2>} />
+          </Routes>
+        </BrowserRouter>
+      </CarritoProvider>
+      <Productos />
+      <Form />
       <Footer />
 
 

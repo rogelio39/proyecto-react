@@ -1,15 +1,15 @@
 
-import './ItemDetail.css'
-import { useState } from 'react'
-import { Link } from 'react-router-dom'
+import './ItemDetail.css';
+import { useState } from 'react';
+import { Link } from 'react-router-dom';
 
 // import CartWidget from '../CartWidget/CartWidget'
 
-import ItemCount from '../ItemCount/ItemCount'
+import ItemCount from '../ItemCount/ItemCount';
 
-import {CarritoContext} from '../../context/CarritoContext'
+import {CarritoContext} from '../../context/CarritoContext';
 
-import { useContext } from 'react'
+import { useContext } from 'react';
 
 
 const ItemDetail = ({ id, nombre, precio, img, stock }) => {
