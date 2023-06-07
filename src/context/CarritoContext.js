@@ -18,6 +18,8 @@ export const CarritoProvider = ({ children }) => {
     const [carrito, setCarrito] = useState([]);
 
 
+    console.log(carrito);
+
     //agregamos metodos a carritoprovider que me permitiran manipular el carrito.
 
 
@@ -26,16 +28,14 @@ export const CarritoProvider = ({ children }) => {
         if (!isInCart(item.id)) {
             setCarrito(prev => [...prev, { item, cantidad }])
         } else {
-
-            console.log('ya tienes este producto');
-            // const updatedCart = carrito.map(prod => {
-            //     if (prod.id === item.id) {
-            //         return {...prod, cantidad: prod.cantidad + cantidad }
-            //     }
-            //     return prod;
-            // }
-            // )
-            // setCarrito(updatedCart);
+            const updatedCart = carrito.map(prod => {
+                if (prod.item.id === item.id) {
+                    return {...prod, cantidad: prod.cantidad + cantidad }
+                }
+                return prod;
+            }
+            )
+            setCarrito(updatedCart);
         }
 
         //la sintaxis: setCarrito(prod => [...prod, {item, cantidad}])
@@ -45,7 +45,7 @@ export const CarritoProvider = ({ children }) => {
             //funcion auxiliar 'isInCart'
 
             const isInCart = (id) => {
-                return carrito.some(prod => prod.id === id);
+                return carrito.some(prod => prod.item.id === id);
             }
         
 
@@ -53,7 +53,7 @@ export const CarritoProvider = ({ children }) => {
     //eliminar productos
 
     const deleteProd = (id) => {
-        const updateCart = carrito.filter(prod => prod.id !== id);
+        const updateCart = carrito.filter(prod => prod.item.id !== id);
         setCarrito(updateCart);
     }
 
@@ -64,12 +64,21 @@ export const CarritoProvider = ({ children }) => {
     }
 
 
+    //calculamos la cantidad de productos en carrito
+
+    const totalCantidad = carrito.reduce((total, producto) => total + producto.cantidad, 0);
+
+
+    //calculamos precio total de los productos en carrito
+
+    const total = carrito.reduce((total, producto) => total + (producto.item.precio * producto.cantidad), 0);
+
 
     //usamos el componente carritoContext.provider para enviar el valor actual del carrito y los metodos a los componentes de mi aplicacion que lo necesiten
 
 
     return (
-        <CarritoContext.Provider value={{ carrito, addProduct, deleteProd, clearCart }} >
+        <CarritoContext.Provider value={{ carrito, addProduct, deleteProd, clearCart, totalCantidad, total }} >
             {children}
         </CarritoContext.Provider>
     )

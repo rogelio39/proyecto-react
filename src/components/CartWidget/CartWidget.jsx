@@ -1,23 +1,27 @@
 
 import './CartWidget.css'
 
-
-import { useState, useEffect } from 'react'
+import { Link } from 'react-router-dom';
+import { useContext } from 'react';
+import { CarritoContext } from '../../context/CarritoContext';
 
 
 
 const CartWidget = ({ cantidad }) => {
 
-    const [productosAgregados, setProductosAgregados] = useState(0);
+    const { totalCantidad } = useContext(CarritoContext);
 
-
-    useEffect((cantidad) => {
-        setProductosAgregados(cantidad);
-    }, [cantidad])
 
 
     return (
-        <li className='bi bi-cart'>{productosAgregados}</li>
+
+        <Link to='/cart'>
+            <li className='bi bi-cart'>
+                {
+                    totalCantidad > 0 && <span>{totalCantidad}</span>
+                }
+            </li>
+        </Link>
     )
 }
 

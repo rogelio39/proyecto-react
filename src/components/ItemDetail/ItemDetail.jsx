@@ -7,29 +7,32 @@ import { Link } from 'react-router-dom';
 
 import ItemCount from '../ItemCount/ItemCount';
 
-import {CarritoContext} from '../../context/CarritoContext';
+import { CarritoContext } from '../../context/CarritoContext';
 
 import { useContext } from 'react';
 
 
-const ItemDetail = ({ id, nombre, precio, img, stock }) => {
+
+
+
+const ItemDetail = ({item}) => {
 
     //funcion manejadora de la cantidad
     const [agregarCantidad, setAgregarCantidad] = useState(0);
 
-    const {addProduct} = useContext(CarritoContext);
+    const { addProduct } = useContext(CarritoContext);
 
+    //creo un objeto con el item y la cantidad:
+
+
+    const { id, nombre, stock,  precio, img} = item;
 
     //funcion manejadora de la cantidad
 
     const handleCantidad = (cantidad) => {
         setAgregarCantidad(cantidad);
 
-        console.log('productos agregados' + cantidad);
-        
-        //creo un objeto con el item y la cantidad:
-
-        const item = {id, nombre, precio};
+        console.log('productos agregados ' + cantidad);
 
         addProduct(item, cantidad);
 
