@@ -1,22 +1,16 @@
-// Import the functions you need from the SDKs you need
-
 //initialeApp inicia la conexion con firebase.
 import { initializeApp } from "firebase/app";
-// TODO: Add SDKs for Firebase products that you want to use
-// https://firebase.google.com/docs/web/setup#available-libraries
 
 //importamos getFirestore que es para acceder al store. Es el servicio de almacenamiento que tiene dentro de la aplicacion de google. Aqui generaremos nuestra base de datos dinamica para consultar y subir las ordenes.
-
-
 //la de firestore se utiliza para obtener una instancia del servicio de firestore.
 
 import { getFirestore } from "firebase/firestore";
 
 
-// Your web app's Firebase configuration. Trabajamos con un objeto con toda la informacion de la cuenta. Aca se incluye la key personal de acceso a la base de datos.
+//  Trabajamos con un objeto con toda la informacion de la cuenta. Aca se incluye la key personal de acceso a la base de datos.
 
 const firebaseConfig = {
-  apiKey: "AIzaSyBaBPyA3QBZcV73XwsgI0e97VGybdp16Zk",
+  apiKey: process.env.REACT_APP_FIREBASE_API_KEY,
   authDomain: "proyecto-coder-eec7f.firebaseapp.com",
   projectId: "proyecto-coder-eec7f",
   storageBucket: "proyecto-coder-eec7f.appspot.com",

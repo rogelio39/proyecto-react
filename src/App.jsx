@@ -4,7 +4,6 @@ import ItemDetailContainer from './components/ItemDetailContainer/ItemDetailCont
 import NavBar from './components/NavBar/NavBar';
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 import Footer from './components/Footer/Footer';
-import Form from './components/Form/Form';
 import { CarritoProvider } from './context/CarritoContext';
 import Cart from './components/Cart/Cart';
 import Checkout from './components/Checkout/Checkout';
@@ -29,12 +28,7 @@ function App() {
           </Routes>
         </BrowserRouter>
       </CarritoProvider>
-      <Form />
       <Footer />
-
-
-
-
     </div >
   );
 }
