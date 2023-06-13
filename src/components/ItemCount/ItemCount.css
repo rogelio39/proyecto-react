@@ -1,0 +1,32 @@
+.addCartContainer {
+    display: flex;
+    flex-direction: column;
+    gap: 0.8rem;
+
+}
+
+.botonMenos{
+    padding: 5px;
+    border-radius: 10px;
+    width: 5vw;
+    font-size: 1rem;
+    font-weight: 800;
+    margin: auto;
+}
+
+
+.botonMas{
+    padding: 5px;
+    border-radius: 10px;
+    width: 5vw;
+    font-size: 1rem;
+    font-weight: 800;
+    margin: auto;
+}
+
+.addCart{
+    padding: 5px;
+    width: 15vw;
+    margin: auto;
+    border-radius: 10px;
+}
