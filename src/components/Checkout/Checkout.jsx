@@ -2,7 +2,7 @@ import { useState, useContext } from "react"
 import { CarritoContext } from "../../context/CarritoContext"
 import { baseDeDatos } from "../../services/config"
 import { collection, addDoc } from 'firebase/firestore'
-
+import './Checkout.css';
 const Checkout = () => {
 
     const { carrito, clearCart } = useContext(CarritoContext);
@@ -67,7 +67,7 @@ const Checkout = () => {
 
 
     return (
-        <div>
+        <div className="checkout">
             <h2>CheckOut</h2>
             <form onSubmit={handleOnSubmit}>
                 {carrito.map(producto => (
@@ -110,9 +110,10 @@ const Checkout = () => {
 
                 {
                     ordenId && (
-                        <strong> ¡Gracias por su compra! Tu número de orden es: {ordenId}</strong>
+                        <p> ¡Gracias por su compra! Tu número de orden es: {ordenId}</p>
                     )
                 }
+
             </form>
 
         </div>

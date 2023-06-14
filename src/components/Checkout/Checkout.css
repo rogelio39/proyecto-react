@@ -1,0 +1,48 @@
+.checkout {
+    background: linear-gradient(to left, rgba(56, 120, 215, 0.877), #fafa) ;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    margin: 0.8rem;
+    border-radius: 10px;
+    border: 1px solid black;
+    display: flex;
+    flex-direction: column;
+    gap: 1rem;
+}
+
+.checkout form {
+    background: linear-gradient(to left, rgba(43, 90, 161, 0.877), rgba(151, 106, 151, 0.667)) ;
+    padding:1rem;
+    border: 1px solid black;
+    border-radius: 5px;
+    width: 50%;
+    margin: auto;
+}
+
+.checkout input {
+    padding: 0.1rem;
+    margin: 0.5rem;
+    border-radius: 5px;
+}
+
+.checkout p {
+    padding: 0.2rem;
+    background-color: white;
+    border: 1px solid black;
+    border-radius: 5px;
+    margin-top: 1rem;
+
+}
+
+.checkout input:hover{
+    background-color: rgb(205, 194, 194);
+}
+
+.checkout input:active{
+    background-color: rgb(151, 151, 220);
+}
+
+.checkout button {
+    padding: 0.2rem;
+    border-radius: 5px;
+}
