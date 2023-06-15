@@ -19,8 +19,22 @@ img {
 }
 
 
-.finishShop{
+.buttonsContainer{
+    display: flex;
+    gap: 1rem;
+    justify-content: center;
+}
+
+button{
     padding: 5px;
     border-radius: 10px;
     margin: auto;
+}
+
+button:hover{
+    background-color: rgb(201, 188, 188);
+}
+
+button:active{
+    background-color: rgb(64, 130, 216);
 }

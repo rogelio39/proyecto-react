@@ -15,7 +15,7 @@ import { useContext } from 'react';
 
 
 
-const ItemDetail = ({item}) => {
+const ItemDetail = ({ item }) => {
 
     //funcion manejadora de la cantidad
     const [agregarCantidad, setAgregarCantidad] = useState(0);
@@ -25,7 +25,7 @@ const ItemDetail = ({item}) => {
     //creo un objeto con el item y la cantidad:
 
 
-    const { id, nombre, stock,  precio, img} = item;
+    const { id, nombre, stock, precio, img } = item;
 
     //funcion manejadora de la cantidad
 
@@ -47,7 +47,10 @@ const ItemDetail = ({item}) => {
             <img src={img} alt={nombre} />
             {
                 //empleamos logica de montaje y desmontaje de componentes
-                agregarCantidad > 0 ? <Link to='/cart'><button className='finishShop'>Terminar compra</button></Link> : <ItemCount inicial={1} stock={stock} funcionAgregar={handleCantidad} />
+                agregarCantidad > 0 ? <div className='buttonsContainer'>
+                    <Link to='/cart'><button>Terminar compra</button></Link>
+                    <Link to='/'><button >Seguir comprando</button></Link>
+                </div> : <ItemCount inicial={1} stock={stock} funcionAgregar={handleCantidad} />
             }
         </div>
     )
